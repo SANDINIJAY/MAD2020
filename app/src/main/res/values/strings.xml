@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MAD20</string>
+
+    <string-array name ="Towns">
+        <item> Galle</item>
+        <item> Colombo</item>
+        <item> Matara</item>
+        <item> Kandy</item>
+        <item> Jaffna</item>
+        <item> Nuwara Eliya</item>
+        <item> Malabe</item>
+    </string-array>
+
+</resources>
