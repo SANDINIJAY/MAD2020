@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MAD20</string>
+
+    <string-array name ="Towns">
+
+        <item> Central</item>
+        <item>Eastern</item>
+        <item>Northern</item>
+        <item> Northern Central</item>
+        <item> Northern Western</item>
+        <item> Sabaragamuwa</item>
+        <item>Southern</item>
+        <item> Uva</item>
+        <item> Western</item>
+
+
+    </string-array>
+
+</resources>
