@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        
+
 
         <activity android:name=".buyer3"></activity>
         <activity android:name=".buyer2"></activity>
