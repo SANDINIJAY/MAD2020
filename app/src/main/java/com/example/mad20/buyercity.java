@@ -53,7 +53,7 @@ public class buyercity extends AppCompatActivity implements AdapterView.OnItemSe
         String text= parent.getItemAtPosition(position).toString();
 
         Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
-        
+
     }
 
     @Override
