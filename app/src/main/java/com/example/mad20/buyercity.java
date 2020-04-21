@@ -54,6 +54,8 @@ public class buyercity extends AppCompatActivity implements AdapterView.OnItemSe
 
         Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
 
+        
+
     }
 
     @Override
