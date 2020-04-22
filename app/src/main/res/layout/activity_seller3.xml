@@ -8,6 +8,17 @@
     tools:context=".seller2">
 
     <Button
+        android:id="@+id/button3"
+        android:layout_width="115dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="128dp"
+        android:background="#9932CC"
+        android:text="Update Items"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
         android:id="@+id/button4"
         android:layout_width="115dp"
         android:layout_height="40dp"
