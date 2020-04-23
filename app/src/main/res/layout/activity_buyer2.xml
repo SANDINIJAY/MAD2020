@@ -29,30 +29,16 @@
         android:layout_marginStart="83dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="77dp"
-        android:layout_marginBottom="20dp"
         android:fontFamily="sans-serif"
         android:text="Select the shop ..."
         android:textColor="#F80B0115"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/list_shop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <ListView
-        android:id="@+id/list_shop"
-        android:layout_width="257dp"
-        android:layout_height="311dp"
-        android:layout_marginStart="77dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="84dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -95,5 +81,49 @@
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
         app:layout_constraintTop_toBottomOf="@+id/button"
         app:srcCompat="@drawable/profile" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="266dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="64dp"
+        android:background="@color/colorPrimary"
+        android:text="Shop 1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="266dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="144dp"
+        android:background="@color/colorPrimary"
+        android:text="Shop 2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="266dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="292dp"
+        android:background="@color/colorPrimary"
+        android:text="Shop 4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="266dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="216dp"
+        android:background="@color/colorPrimary"
+        android:text="Shop 3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
