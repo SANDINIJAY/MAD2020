@@ -19,6 +19,9 @@ public class buyercity extends AppCompatActivity implements AdapterView.OnItemSe
     private Button button;
 
 
+    public static   String text1 ;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +53,7 @@ public class buyercity extends AppCompatActivity implements AdapterView.OnItemSe
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-        String text1= parent.getItemAtPosition(position).toString();
+       text1 = parent.getItemAtPosition(position).toString();
 
         Toast.makeText(parent.getContext(),text1,Toast.LENGTH_SHORT).show();
 

@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -20,38 +21,67 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class buyer2 extends AppCompatActivity {
-     ListView listView;
+   private  ListView listView1;
+
+
 
     FirebaseDatabase database;
     DatabaseReference myRef;
-    ArrayList<String> City_name =new ArrayList<>();
+    private ArrayList<String> Shopname = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buyer2);
 
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("City_Shop");
 
-        listView = (ListView) findViewById(R.id.listView1);
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, City_name );
-        listView.setAdapter(arrayAdapter);
+
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("CityShop");
+
+
+
+        listView1= (ListView) findViewById(R.id.listView1);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, Shopname);
+       listView1.setAdapter(arrayAdapter);
+
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position<=1000000){
+
+                    Intent myintent = new Intent(view.getContext(),buyer3.class);
+
+                }
+            }
+
+        } );
+
+
+
 
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                String value = dataSnapshot.getValue(String.class);
-                City_name.add(value);
-                arrayAdapter.notifyDataSetChanged();
+            public void onChildAdded( DataSnapshot dataSnapshot, String s) {
+                String value = dataSnapshot.child("Shopname").getValue(String.class);
+                String City = dataSnapshot.child("Cityname").getValue(String.class);
+
+                if (City.equals(buyercity.text1)) {
+
+                    Shopname.add(value);
+                    arrayAdapter.notifyDataSetChanged();
+                }
+
             }
 
             @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            public void onChildChanged( DataSnapshot dataSnapshot, @Nullable String s) {
 
             }
 
@@ -69,12 +99,11 @@ public class buyer2 extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
+
+
         });
 
+    }
 
-
-
-
-
-    }}
+}
 
