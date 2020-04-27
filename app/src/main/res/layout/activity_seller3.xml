@@ -16,7 +16,7 @@
         android:background="#9932CC"
         android:text="Update Items"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <Button
         android:id="@+id/button4"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.315"
         app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -46,33 +46,35 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView1"
         android:layout_width="251dp"
         android:layout_height="44dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="79dp"
         android:layout_marginBottom="30dp"
         android:fontFamily="sans-serif"
         android:text="Enter Your Items in bookshop"
         android:textColor="#F82B0255"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner1"
+        app:layout_constraintBottom_toTopOf="@id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="263dp"
         android:layout_marginBottom="44dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/home" />
 
     <ImageButton
@@ -96,7 +98,7 @@
         android:background="#9932CC"
         android:text="Add Items"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -108,7 +110,7 @@
         android:text="Item 1"
         app:layout_constraintBottom_toTopOf="@+id/checkBox4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <CheckBox
         android:id="@+id/checkBox2"
@@ -158,7 +160,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <EditText
         android:id="@+id/editText7"
@@ -172,7 +174,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <EditText
         android:id="@+id/editText8"
@@ -186,7 +188,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <EditText
         android:id="@+id/editText9"
@@ -200,6 +202,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

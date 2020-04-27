@@ -11,4 +11,23 @@
         <item> Malabe</item>
     </string-array>
 
+
+    <string-array name ="Bookshop">
+        <item> Yapa Bookshop</item>
+        <item> M.D. Gunasena Bookshop</item>
+        <item> Sammani Bookshop</item>
+        <item> Pradeepa Bookshop</item>
+        <item> Victory Bookshop</item>
+        <item> Sooriya Bookshop</item>
+        <item> Rathnani Bookshop</item>
+    </string-array>
+
+    <string-array name ="Address">
+        <item> 211/1,Meegoda,Godagama.</item>
+        <item> 427,Delkanda,Nugegoda</item>
+        <item> 217,Pannipitiya,Maharagama.</item>
+        <item> 72/A,Kuubiaththa,Colombo 6.</item>
+        <item> 460/A,Thalahena North,Malabe.</item>
+        <item> 620,Baththaramull,Kosaththa.</item>
+    </string-array>
 </resources>
