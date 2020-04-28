@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MAD20</string>
 
-    <string-array name ="Towns">
+    <string-array name="Towns" background="#D2E7E8">
 
         <item> Ampara</item>
         <item>Anuradhapura</item>

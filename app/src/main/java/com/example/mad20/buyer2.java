@@ -27,8 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class buyer2 extends AppCompatActivity {
-   private  ListView listView1;
 
+
+    private  ListView listView1;
+
+    public static   String text1 ;
+    public static String text2;
 
 
     FirebaseDatabase database;
@@ -50,20 +54,15 @@ public class buyer2 extends AppCompatActivity {
         listView1= (ListView) findViewById(R.id.listView1);
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, Shopname);
        listView1.setAdapter(arrayAdapter);
+       listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               text2 = parent.getItemAtPosition(position).toString();
 
-        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position<=1000000){
-
-                    Intent myintent = new Intent(view.getContext(),buyer3.class);
-
-                }
-            }
-
-        } );
-
-
+               Intent myintent = new Intent (view.getContext(), buyer3.class);
+               startActivityForResult(myintent,0);
+           }
+       });
 
 
         myRef.addChildEventListener(new ChildEventListener() {
@@ -72,10 +71,15 @@ public class buyer2 extends AppCompatActivity {
                 String value = dataSnapshot.child("Shopname").getValue(String.class);
                 String City = dataSnapshot.child("Cityname").getValue(String.class);
 
+
+
                 if (City.equals(buyercity.text1)) {
 
                     Shopname.add(value);
                     arrayAdapter.notifyDataSetChanged();
+
+                    text2 = value ;
+
                 }
 
             }
