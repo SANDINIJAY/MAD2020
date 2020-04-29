@@ -12,34 +12,35 @@
 
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="258dp"
-        android:layout_height="36dp"
+        android:layout_width="264dp"
+        android:layout_height="61dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="41dp"
         android:layout_marginEnd="78dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="137dp"
         android:background="#D2E7E8"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="255dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="258dp"
-        android:shadowColor="#9C27B0"
+        android:layout_width="167dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="270dp"
+        android:background="@drawable/custom_button"
         android:text="Select"
-        android:background="#9932CC"
+        android:textAllCaps="false"
         android:textColor="#26054D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -56,12 +57,13 @@
         app:srcCompat="@drawable/slogo" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="251dp"
         android:layout_height="44dp"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="79dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="41dp"
         android:fontFamily="sans-serif"
         android:text="Select your City "
         android:textColor="#F8030005"
@@ -76,28 +78,27 @@
         android:id="@+id/imageButton2"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="263dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="137dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1"
+        app:layout_constraintTop_toBottomOf="@+id/button"
         app:srcCompat="@drawable/home" />
 
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="137dp"
+        android:layout_marginBottom="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-        app:layout_constraintStart_toEndOf="@+id/imageButton2"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1"
-        app:layout_constraintVertical_bias="0.97"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
         app:srcCompat="@drawable/cart" />
 
     <ImageButton
@@ -105,13 +106,14 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="163dp"
+        android:layout_marginTop="328dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1"
         app:srcCompat="@drawable/profile" />
 
 

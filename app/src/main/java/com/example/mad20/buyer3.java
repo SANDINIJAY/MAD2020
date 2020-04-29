@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -22,18 +23,32 @@ import java.util.List;
 
 public class buyer3 extends AppCompatActivity {
 
+    private Button button4;
+
     public static String text2 ;
+    public static String text3 ;
 
    private ListView listView2;
 
    FirebaseDatabase database;
     DatabaseReference myRef;
 
+
    private ArrayList<String> Itemname = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buyer3);
+
+        button4 = (Button) findViewById(R.id.button4);
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openbuyer5();
+            }
+
+        });
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("ShopItems");
@@ -49,6 +64,8 @@ public class buyer3 extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                Intent myintent2 = new Intent (view.getContext(), buyer4.class);
                 startActivityForResult(myintent2,0);
+
+              text3 = parent.getItemAtPosition(position).toString();
             }
         });
 
@@ -63,7 +80,7 @@ public class buyer3 extends AppCompatActivity {
                      Itemname.add(value2);
                   arrayAdapter.notifyDataSetChanged();
 
-
+            text3=value2;
                }
 
           }
@@ -93,5 +110,9 @@ public class buyer3 extends AppCompatActivity {
 
 }
 
+    public void openbuyer5(){
+        Intent intent = new Intent(this, buyer5.class);
+        startActivity(intent);
+    }
     }
 

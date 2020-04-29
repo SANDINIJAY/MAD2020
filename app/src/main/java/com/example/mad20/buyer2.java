@@ -71,8 +71,6 @@ public class buyer2 extends AppCompatActivity {
                 String value = dataSnapshot.child("Shopname").getValue(String.class);
                 String City = dataSnapshot.child("Cityname").getValue(String.class);
 
-
-
                 if (City.equals(buyercity.text1)) {
 
                     Shopname.add(value);
