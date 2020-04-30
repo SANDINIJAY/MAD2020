@@ -54,13 +54,31 @@ public class seller3 extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateList();
+                String listID = editText2.getText().toString().trim();
+                String item1 = editText2.getText().toString().trim();
+                String item2 = editText7.getText().toString().trim();
+                String item3 = editText8.getText().toString().trim();
+                String item4 = editText9.getText().toString().trim();
+
+                updateList(listID,item1,item2,item3,item4);
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deleteList();
+                String listID = editText2.getText().toString().trim();
+                String item1 = editText2.getText().toString().trim();
+                String item2 = editText7.getText().toString().trim();
+                String item3 = editText8.getText().toString().trim();
+                String item4 = editText9.getText().toString().trim();
+                if(!TextUtils.isEmpty(listID)){
+
+                    editText2.setError("item required");
+                    return;
+
+                }
+                deleteList(listID);
+
             }
         });
 
