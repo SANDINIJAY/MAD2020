@@ -12,7 +12,7 @@ public class List {
 
 
     }
-    public List(String listD,String item1,String item2,String item3,String item4){
+    public List(String listID,String item1,String item2,String item3,String item4){
         this.listID = listID;
         this.item1 = item1;
         this.item2 = item2;
