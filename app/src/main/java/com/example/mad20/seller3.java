@@ -51,16 +51,19 @@ public class seller3 extends AppCompatActivity {
                 addList();
             }
         });
-        button3.setOnItemLongCickListner(new AdapterView.OnItemLongClickListener(){
+        button3.setOnClickListener(new View.OnClickListener() {
             @Override
-                    public  boolean onItemLongClick(AdapterView<?> adapterView,View view,int i,long l) {
-
-                List list = lists.get(i);
-                showUpdateDialog(list.getListID(),list.item1,list.item2,list.item3,list.item4);
-
-                return false;
+            public void onClick(View v) {
+                updateList();
             }
         });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteList();
+            }
+        });
+
     }
     private void showUpdateDialog(final String listID, final String item1, final String item2, final String item3, final String item4){
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -72,6 +75,7 @@ public class seller3 extends AppCompatActivity {
         final EditText editText8= (EditText) dialogView.findViewById(R.id.editText8);
         final EditText editText9= (EditText) dialogView.findViewById(R.id.editText9);
         final Button button3= (Button) dialogView.findViewById(R.id.button3);
+
 
         dialogBuilder.setTitle("Updaing Items" + listID);
         final AlertDialog alertDialog = dialogBuilder.create();
@@ -98,7 +102,6 @@ public class seller3 extends AppCompatActivity {
             }
         });
 
-
     }
     private boolean updateList(String listID,String item1,String item2,String item3,String item4){
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("lists").child(listID);
@@ -107,7 +110,12 @@ public class seller3 extends AppCompatActivity {
         Toast.makeText(this,"list updated successfully",Toast.LENGTH_LONG).show();
         return true;
     }
+    private void deleteList(String listID){
+        DatabaseReference drlist = FirebaseDatabase.getInstance().getReference("lists").child(listID);
+        drlist.removeValue();
 
+        Toast.makeText(this,"List is deleted",Toast.LENGTH_LONG).show();
+    }
     private void addList(){
 
         String qty1 = editText2.getText().toString().trim();
