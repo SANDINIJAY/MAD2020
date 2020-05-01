@@ -35,4 +35,7 @@ public class DataItem {
     }
 
 
+    public String getItemnid() {
+        return buyer4.text6;
+    }
 }

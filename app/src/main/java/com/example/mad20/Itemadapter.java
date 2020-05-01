@@ -38,7 +38,9 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        final DataItem dataItems=this.dataItems.get(position);
+        final  DataItem dataItems=this.dataItems.get(position);
+
+
         holder.Itemname.setText(String.valueOf(dataItems.getItemname()));
         holder.Price.setText(String.valueOf(dataItems.getPrice()));
         holder.Quantity.setText(String.valueOf(dataItems.getQuantity()));
@@ -67,8 +69,9 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
             Itemname=itemView.findViewById(R.id.Itemname);
             Price=itemView.findViewById(R.id.Price);
             Quantity=itemView.findViewById(R.id.Quantity);
-            cardView = itemView.findViewById(R.id.cardView);
             button5=itemView.findViewById(R.id.button5);
+            cardView = itemView.findViewById(R.id.cardView);
+
         }
     }
 }

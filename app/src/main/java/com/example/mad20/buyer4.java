@@ -25,11 +25,12 @@ public class buyer4 extends AppCompatActivity {
     TextView textView3,textView4;
     EditText editText2;
     Button button2, button3;
-   DatabaseReference myref;
-   DatabaseReference myref2;
-   FirebaseDatabase database;
+    DatabaseReference myref;
+    DatabaseReference myref2;
+    FirebaseDatabase database;
     DataItem dataitem;
-    long maxid=0;
+    public long maxid=0;
+    public static String text6;
 
 
     public static   String text4 ;
@@ -56,9 +57,9 @@ public class buyer4 extends AppCompatActivity {
         myref2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                  if (dataSnapshot.exists()){
-                     maxid=(dataSnapshot.getChildrenCount());
-                  }
+                if (dataSnapshot.exists()){
+                    maxid=(dataSnapshot.getChildrenCount());
+                }
             }
 
             @Override
@@ -80,7 +81,7 @@ public class buyer4 extends AppCompatActivity {
                 //myref2.push().setValue(dataitem);
 
                 myref2.child(String.valueOf(maxid+1)).setValue(dataitem);
-               Toast.makeText(buyer4.this ,"Data Inserted",Toast.LENGTH_SHORT).show();
+                Toast.makeText(buyer4.this ,"Data Inserted",Toast.LENGTH_SHORT).show();
 
             }
         });

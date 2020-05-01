@@ -65,6 +65,7 @@ public class buyer3 extends AppCompatActivity {
                 Intent myintent2 = new Intent (view.getContext(), buyer4.class);
                 startActivityForResult(myintent2,0);
 
+
                 text3 = parent.getItemAtPosition(position).toString();
             }
         });
@@ -82,6 +83,7 @@ public class buyer3 extends AppCompatActivity {
                     arrayAdapter.notifyDataSetChanged();
 
                     text3=value2;
+
                 }
 
             }
