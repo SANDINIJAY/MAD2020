@@ -23,6 +23,7 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
 
     private Context context;
     private ArrayList<DataItem> dataItems;
+
     public Itemadapter(Context c,ArrayList<DataItem> dataItems){
         this .context= c;
         this.dataItems=dataItems;
@@ -38,9 +39,9 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         final DataItem dataItems=this.dataItems.get(position);
-        holder.Itemname.setText(dataItems.getItemname());
-        holder.Price.setText(dataItems.getPrice());
-        holder.Quantity.setText(dataItems.getQuantity());
+        holder.Itemname.setText(String.valueOf(dataItems.getItemname()));
+        holder.Price.setText(String.valueOf(dataItems.getPrice()));
+        holder.Quantity.setText(String.valueOf(dataItems.getQuantity()));
         holder.button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
