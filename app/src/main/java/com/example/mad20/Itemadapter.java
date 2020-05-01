@@ -1,6 +1,7 @@
 package com.example.mad20;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,10 +48,20 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
         holder.button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("DataItem").child(dataItems.getItemname());
+                DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("DataItem").child(dataItems.getItemnid());
                 databaseReference.removeValue();
                 Toast.makeText(context,"Item Deleted",Toast.LENGTH_SHORT).show();
             }
+        });
+        holder.button6.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+          Intent i = new Intent (context, buyer6.class);
+          i.putExtra("Quantity",dataItems.getQuantity());
+          v.getContext().startActivity(i);
+
+            }
+
         });
     }
 
@@ -61,7 +72,7 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView Itemname,Price,Quantity;
-        Button button5;
+        Button button5,button6;
         CardView cardView;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -70,6 +81,7 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
             Price=itemView.findViewById(R.id.Price);
             Quantity=itemView.findViewById(R.id.Quantity);
             button5=itemView.findViewById(R.id.button5);
+            button6= itemView.findViewById(R.id.button6);
             cardView = itemView.findViewById(R.id.cardView);
 
         }

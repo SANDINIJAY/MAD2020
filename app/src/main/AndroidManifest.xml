@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".buyer5"></activity>
+        <activity android:name=".buyer6"></activity>
+        <activity android:name=".ItUpdate" />
+        <activity android:name=".UpdateItem2" />
+        <activity android:name=".buyer5" />
         <activity android:name=".buyer4" />
         <activity android:name=".buyer3" />
         <activity android:name=".buyer2" />
