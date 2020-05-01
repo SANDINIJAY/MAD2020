@@ -65,7 +65,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Password"
-        android:textSize="30sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,10 +102,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="137dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="130dp"
-        android:text="Create Account"
+        android:layout_marginStart="104dp"
+        android:layout_marginEnd="77dp"
+        android:layout_marginBottom="133dp"
+        android:text="New Here ? Create Account"
         android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
     <TextView
