@@ -105,11 +105,14 @@
         android:id="@+id/button4"
         android:layout_width="250dp"
         android:layout_height="57dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="43dp"
         android:background="@drawable/custom_button"
         android:text="My Item List"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="537dp" />
+        app:layout_constraintTop_toBottomOf="@+id/listView2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

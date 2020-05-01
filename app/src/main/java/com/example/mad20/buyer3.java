@@ -28,13 +28,13 @@ public class buyer3 extends AppCompatActivity {
     public static String text2 ;
     public static String text3 ;
 
-   private ListView listView2;
+    private ListView listView2;
 
-   FirebaseDatabase database;
+    FirebaseDatabase database;
     DatabaseReference myRef;
 
 
-   private ArrayList<String> Itemname = new ArrayList<>();
+    private ArrayList<String> Itemname = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,31 +59,32 @@ public class buyer3 extends AppCompatActivity {
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, Itemname);
         listView2.setAdapter(arrayAdapter);
 
-       listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-          @Override
+        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               Intent myintent2 = new Intent (view.getContext(), buyer4.class);
+                Intent myintent2 = new Intent (view.getContext(), buyer4.class);
                 startActivityForResult(myintent2,0);
 
-              text3 = parent.getItemAtPosition(position).toString();
+                text3 = parent.getItemAtPosition(position).toString();
             }
         });
 
 
-       myRef.addChildEventListener(new ChildEventListener() {
+        myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-              String value2 = dataSnapshot.child("Itemname").getValue(String.class);
-              String Shop = dataSnapshot.child("Shopname").getValue(String.class);
-               if (Shop.equals(buyer2.text2))
-               {
-                     Itemname.add(value2);
-                  arrayAdapter.notifyDataSetChanged();
+                String value2 = dataSnapshot.child("Itemname").getValue(String.class);
+                String Shop = dataSnapshot.child("Shopname").getValue(String.class);
 
-            text3=value2;
-               }
+                if (Shop.equals(buyer2.text2))
+                {
+                    Itemname.add(value2);
+                    arrayAdapter.notifyDataSetChanged();
 
-          }
+                    text3=value2;
+                }
+
+            }
 
             @Override
             public void onChildChanged( DataSnapshot dataSnapshot, @Nullable String s) {
@@ -107,12 +108,10 @@ public class buyer3 extends AppCompatActivity {
 
 
         });
-
-}
+    }
 
     public void openbuyer5(){
         Intent intent = new Intent(this, buyer5.class);
         startActivity(intent);
     }
-    }
-
+}
