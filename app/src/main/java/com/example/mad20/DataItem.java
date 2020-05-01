@@ -1,17 +1,14 @@
 package com.example.mad20;
 
 public class DataItem {
-   String Itemname ;
-     String Price;
-     Integer Quantity;
+  private String Itemname ;
+    private  String Price;
+    private  Integer Quantity;
 
 
-
-    public DataItem(String Itemname, String Price, Integer Quantity){
-        this.Itemname= Itemname;
-        this.Price=Price;
-        this.Quantity=Quantity;
+    public DataItem() {
     }
+
 
     public String getItemname() {
         return Itemname;
@@ -37,7 +34,5 @@ public class DataItem {
         Quantity = quantity;
     }
 
-    public DataItem() {
-    }
 
 }

@@ -48,24 +48,24 @@ public class buyer4 extends AppCompatActivity {
         editText2= (EditText) findViewById(R.id.editText2);
         button2= (Button) findViewById(R.id.button2);
         dataitem = new DataItem();
-        
-    myref2.addValueEventListener(new ValueEventListener() {
-    @Override
-    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-        if (dataSnapshot.exists()){
-            maxid=(dataSnapshot.getChildrenCount());
-        }
-    }
-
-    @Override
-    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-    }
-});
 
         database = FirebaseDatabase.getInstance();
         myref = database.getReference("ShopItems");
         myref2 = FirebaseDatabase.getInstance().getReference().child("DataItem");
+
+        myref2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                  if (dataSnapshot.exists()){
+                     maxid=(dataSnapshot.getChildrenCount());
+                  }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         button2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -77,8 +77,10 @@ public class buyer4 extends AppCompatActivity {
                 dataitem.setPrice(Price);
                 dataitem.setQuantity(Quantity);
 
-            myref2.child(String.valueOf(maxid+1)).setValue(dataitem);
-                Toast.makeText(buyer4.this ,"Data Inserted",Toast.LENGTH_SHORT).show();
+                //myref2.push().setValue(dataitem);
+
+                myref2.child(String.valueOf(maxid+1)).setValue(dataitem);
+               Toast.makeText(buyer4.this ,"Data Inserted",Toast.LENGTH_SHORT).show();
 
             }
         });
