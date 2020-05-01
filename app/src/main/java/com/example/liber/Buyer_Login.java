@@ -18,16 +18,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Buyer_Login extends AppCompatActivity {
 
-     EditText  bEmail, bPassword;
-     TextView forotPassword;
-     Button bLogin;
-     FirebaseAuth mAuth;
+    EditText bEmail, bPassword;
+    TextView forotPassword;
+    Button bLogin;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,56 +76,67 @@ public class Buyer_Login extends AppCompatActivity {
                         });
             }
 
-            });
+        });
 
-       bLogin.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               startActivity(new Intent(getApplicationContext(),Buyer_Reg.class));
-           }
+        bLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Buyer_Reg.class));
+            }
+        });
+
+        forotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                final EditText restMail = new EditText(v.getContext());
+                final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
+                passwordResetDialog.setTitle("Reset Password?");
+                passwordResetDialog.setMessage("Enter your Email To Received Reset Link");
+                passwordResetDialog.setView(restMail);
+
+                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        String mail = restMail.getText().toString();
+                        mAuth.sendPasswordResetEmail(mail);
+                        addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(Buyer_Login.this, "Reset Link Sent To Your Email", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        addFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(Buyer_Login.this, "Error Reset Link is Not sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+
+                        });
+                    }
+
+                    private void addOnSuccessListener(OnSuccessListener<Void> voidOnSuccessListener) {
+                    }
+
+                    private void addFailureListener(OnFailureListener onFailureListener) {
+                    }
+
                 });
-
-       forotPassword.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               EditText restMail = new EditText(v.getContext());
-               final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
-               passwordResetDialog.setTitle("Reset Password?");
-               passwordResetDialog.setMessage("Enter your Email To Received Reset Link");
-               passwordResetDialog.setView(restMail);
-
-               passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
-                       String mail = resetMail.getText().toString();
-                       mAuth.sendPasswordResetEmail(mail);addOnSuccessListener(new OnSuccessListener<Void>() {
-                           @Override
-                           public void onSuccess(Void aVoid) {
-
-                           }
-                       });{
-
-                       }
-                       @Override
-                           public void OnSuccess(Void ){
-                               Toast.makeText(Buyer_Login.this,"Reset Link Sent To Your Email",Toast.LENGTH_SHORT).show();
-                           });addFailureListener(new OnFailureListener(){
-                               @Override
-                                public void onFailure(@NonNull Exception e){
-                                   Toast.makeText(Buyer_Login.this,"Error Reset Link is Not sent"+e.getMessage() Toast.LENGTH_SHORT).show();)
-                               }
-                           });
-                       }
-
-               });
                 passwordResetDialog.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
-                            public void onClick(DialogInterface dialog, int which){
+                    public void onClick(DialogInterface dialog, int which) {
 
-                       }
-                   }
-           }
-       });
+                    }
+
+                });
             }
 
-        }
+
+        });
+
+
+    }
+}
+
+
+
