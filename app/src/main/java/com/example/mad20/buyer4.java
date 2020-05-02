@@ -31,13 +31,12 @@ public class buyer4 extends AppCompatActivity {
     DatabaseReference myref2;
     FirebaseDatabase database;
     DataItem dataitem;
-    public long maxid=0;
-    public static String text6;
 
+    public long maxid=0;
 
     public static   String text4 ;
     public static   String text5 ;
-
+    public static long text6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +60,8 @@ public class buyer4 extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
                     maxid=(dataSnapshot.getChildrenCount());
+
+                    text6 =maxid;
                 }
             }
 
@@ -74,7 +75,7 @@ public class buyer4 extends AppCompatActivity {
             @Override
             public void onClick(View view){
 
-                if (editText2.getText().length()==0){
+                if (editText2.getText().length()==0 ){
                  editText2.setError("Enter Quantity");
                 }
                 else

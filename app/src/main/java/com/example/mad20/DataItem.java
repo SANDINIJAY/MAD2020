@@ -35,7 +35,7 @@ public class DataItem {
     }
 
 
-    public String getItemnid() {
+    public long getItemnid() {
         return buyer4.text6;
     }
 }

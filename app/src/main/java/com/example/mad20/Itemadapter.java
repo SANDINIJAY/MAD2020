@@ -39,7 +39,7 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        final  DataItem dataItems=this.dataItems.get(position);
+         DataItem dataItems=this.dataItems.get(position);
 
 
         holder.Itemname.setText(String.valueOf(dataItems.getItemname()));
@@ -48,11 +48,12 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
         holder.button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("DataItem").child(dataItems.getItemnid());
+               DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("DataItem").child(valueOf(buyer4.text6));
                 databaseReference.removeValue();
                 Toast.makeText(context,"Item Deleted",Toast.LENGTH_SHORT).show();
             }
         });
+        /*
         holder.button6.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -63,6 +64,11 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
             }
 
         });
+        */
+    }
+
+    private String valueOf(long text6) {
+        return String.valueOf((buyer4.text6));
     }
 
     @Override

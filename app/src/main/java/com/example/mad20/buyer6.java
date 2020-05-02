@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class buyer6 extends AppCompatActivity {
         EditText editText5;
         TextView textView5,textView6;
-        Button button6;
+        Button button5,button6;
         String itemname, price,quantity;
 
 
@@ -44,11 +44,15 @@ public class buyer6 extends AppCompatActivity {
     button6.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("DataItem").child("Itemname");
+            DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("DataItem").child(valueOf(buyer4.text6));
             Integer uQuantity;
 
         }
     });
 
+    }
+
+    private String valueOf(long text6) {
+        return String.valueOf((buyer4.text6));
     }
 }
