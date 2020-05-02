@@ -26,6 +26,7 @@
         android:layout_width="337dp"
         android:layout_height="50dp"
         android:layout_marginStart="48dp"
+        android:layout_marginTop="23dp"
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="66dp"
         android:background="#D2E7E8"
@@ -34,19 +35,21 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="337dp"
         android:layout_height="50dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="23dp"
         android:background="#D2E7E8"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.648"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -54,18 +57,20 @@
         android:id="@+id/editText5"
         android:layout_width="318dp"
         android:layout_height="51dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="78dp"
         android:background="#D2E7E8"
         android:ems="10"
         android:hint="Quantity "
         android:inputType="number"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button7"
         android:layout_width="145dp"
         android:layout_height="55dp"
         android:layout_marginStart="132dp"

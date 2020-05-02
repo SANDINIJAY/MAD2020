@@ -21,14 +21,19 @@ import java.util.ArrayList;
 import static android.media.CamcorderProfile.get;
 
 public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> {
+    Button button6;
 
     private Context context;
     private ArrayList<DataItem> dataItems;
+
+
 
     public Itemadapter(Context c,ArrayList<DataItem> dataItems){
         this .context= c;
         this.dataItems=dataItems;
     }
+
+
 
     @NonNull
     @Override
@@ -39,8 +44,8 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-         DataItem dataItems=this.dataItems.get(position);
 
+      final   DataItem dataItems=this.dataItems.get(position);
 
         holder.Itemname.setText(String.valueOf(dataItems.getItemname()));
         holder.Price.setText(String.valueOf(dataItems.getPrice()));
@@ -53,18 +58,23 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
                 Toast.makeText(context,"Item Deleted",Toast.LENGTH_SHORT).show();
             }
         });
-        /*
+
+
+
         holder.button6.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-          Intent i = new Intent (context, buyer6.class);
-          i.putExtra("Quantity",dataItems.getQuantity());
+          Intent i = new Intent (v.getContext(), buyer6.class);
+         i.putExtra("Quantity",dataItems.getQuantity());
+          i.putExtra("Quantity",dataItems.getPrice());
+          i.putExtra("Quantity",dataItems.getItemname());
+
           v.getContext().startActivity(i);
 
             }
 
         });
-        */
+
     }
 
     private String valueOf(long text6) {
@@ -83,9 +93,9 @@ public class Itemadapter extends RecyclerView.Adapter<Itemadapter.MyViewHolder> 
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            Itemname=itemView.findViewById(R.id.Itemname);
-            Price=itemView.findViewById(R.id.Price);
-            Quantity=itemView.findViewById(R.id.Quantity);
+            Itemname=itemView.findViewById(R.id.itemname);
+            Price=itemView.findViewById(R.id.price);
+            Quantity=itemView.findViewById(R.id.quantity);
             button5=itemView.findViewById(R.id.button5);
             button6= itemView.findViewById(R.id.button6);
             cardView = itemView.findViewById(R.id.cardView);

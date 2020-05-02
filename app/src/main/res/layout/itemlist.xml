@@ -32,7 +32,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/Itemname"
+                    android:id="@+id/itemname"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="5dp"
@@ -56,7 +56,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/Price"
+                    android:id="@+id/price"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="5dp"
@@ -80,7 +80,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/Quantity"
+                    android:id="@+id/quantity"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="5dp"
