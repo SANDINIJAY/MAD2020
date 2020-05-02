@@ -20,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import static java.sql.Types.NULL;
+
 
 public class buyer4 extends AppCompatActivity {
     TextView textView3,textView4;
@@ -67,21 +69,27 @@ public class buyer4 extends AppCompatActivity {
 
             }
         });
+
         button2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                int Quantity=Integer.parseInt(editText2.getText().toString().trim());
-                String Price = ((buyer4.text5));
 
+                if (editText2.getText().length()==0){
+                 editText2.setError("Enter Quantity");
+                }
+                else
+                {
+                    int Quantity=Integer.parseInt(editText2.getText().toString().trim());
+                    String Price = ((buyer4.text5));
+                    dataitem.setItemname(buyer4.text4);
+                    dataitem.setPrice(Price);
+                    dataitem.setQuantity(Quantity);
 
-                dataitem.setItemname(buyer4.text4);
-                dataitem.setPrice(Price);
-                dataitem.setQuantity(Quantity);
+                    //myref2.push().setValue(dataitem);
 
-                //myref2.push().setValue(dataitem);
-
-                myref2.child(String.valueOf(maxid+1)).setValue(dataitem);
-                Toast.makeText(buyer4.this ,"Data Inserted",Toast.LENGTH_SHORT).show();
+                    myref2.child(String.valueOf(maxid+1)).setValue(dataitem);
+                    Toast.makeText(buyer4.this ,"Data Inserted",Toast.LENGTH_SHORT).show();
+                }
 
             }
         });

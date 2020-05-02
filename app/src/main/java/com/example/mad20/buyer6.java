@@ -46,7 +46,7 @@ public class buyer6 extends AppCompatActivity {
         public void onClick(View v) {
             DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("DataItem").child("Itemname");
             Integer uQuantity;
-            
+
         }
     });
 
